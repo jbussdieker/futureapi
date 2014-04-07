@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+require 'api'
+
+=begin
+puts
+puts "### Create node"
+node = Api::Node.create(name: "test")
+puts node
+
+puts
+puts "### All nodes"
+Api::Node.all.each do |node|
+  puts node
+end
+
+puts
+puts "### Update node"
+node.name = "asdf"
+puts node.save
+
+puts
+puts "### Delete node"
+puts node.delete
+=end
+
+node = Api::Node.create(name: "test")
+puts node.to_json
+
+node.name = "haha"
+node.save
+
+Api::Node.all.each do |node|
+  puts node.to_json
+end
